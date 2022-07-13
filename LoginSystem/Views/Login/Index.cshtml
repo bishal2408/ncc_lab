@@ -1,0 +1,28 @@
+﻿@model LoginSystem.Models.login
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            @Html.LabelFor(x => x.username) 
+            @Html.EditorFor(x => x.username)
+            @Html.ValidationMessageFor(x => x.username)
+            <br />
+
+            @Html.LabelFor(x => x.password)
+            @Html.EditorFor(x => x.password)
+            @Html.ValidationMessageFor(x => x.password)
+            @ViewBag.Message
+            <br />
+
+            <input type="submit" value="Submit" name="submit" />
+        }
+    </div>
+</body>
+</html>
